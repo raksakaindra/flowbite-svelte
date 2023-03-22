@@ -36,8 +36,6 @@
   class={wrapperClass}
   on:show
   bind:open>
-  <div class="flex flex-col md:flex-row p-4 max-w-screen-md justify-center mx-auto">
-    <ul class={ulClass}>
       {#each items as item, index}
         <li>
           <slot {item} {index} />
@@ -45,7 +43,4 @@
       {:else}
         <slot />
       {/each}
-    </ul>
-    {#if full && $$slots.extra}<div class="md:w-1/3 mt-4 md:mt-0"><slot name="extra" /></div>{/if}
-  </div>
 </Popper>
